@@ -45,6 +45,21 @@ python reverse_diffusion.py
 ```
 数据集存放在testdata中，可以修改reverse_diffusion.py中数据导入的路径，更多数据集下载可以查看<br>https://opendatalab.com/OpenDataLab/FFHQ/tree/main/sample/image</br>，或者真实照片修改成64*64
 
+生成再反转
+```.bash
+python generate_reverse.py
+```
+
+噪声插值
+```.bash
+python edit.py
+```
+
+原图像插值
+```.bash
+python edit_real.py
+```
+
 The easiest way to explore different sampling strategies is to modify [`example.py`](./example.py) directly. You can also incorporate the pre-trained models and/or our proposed EDM sampler in your own code by simply copy-pasting the relevant bits. Note that the class definitions for the pre-trained models are stored within the pickles themselves and loaded automatically during unpickling via [`torch_utils.persistence`](./torch_utils/persistence.py). To use the models in external Python scripts, just make sure that `torch_utils` and `dnnlib` are accesible through `PYTHONPATH`.
 
 **Docker**: You can run the example script using Docker as follows:
